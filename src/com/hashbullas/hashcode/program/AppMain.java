@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
+import java.util.stream.Stream;
 
 import com.hashbullas.hashcode.files.FileUtils;
 import com.hashbullas.hashcode.parser.Parser;
@@ -85,15 +86,15 @@ public class AppMain {
             clientPreferences.add(client);
         }
 
-        // TODO parse logic
-        // ...
+        var pizzaIngredients = new HashSet<>();
 
         // TODO program logic
         // ...
 
-        // TODO generate solution
-        // ...
         String solution = "";
+        solution += pizzaIngredients.size();
+        solution += " ";
+        solution += String.join(" ", pizzaIngredients.toArray(new String[]{}));
 
         writeSolutionToFile(fileName, solution);
     }
